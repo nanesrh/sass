@@ -1,0 +1,25 @@
+@mixin overall {
+    margin: 0px;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+@mixin textStyle ($size, $weight, $color) {
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+}
+
+@mixin media ($size) {
+    @if( $size == M) {
+        @media (max-width: 912px){
+            @content;
+        }
+    } @else if($size) {
+        @if ($size == L) {
+           @media (min-width: 912px) and (max-width: 1200px){
+            @content;
+           }
+        }
+    }
+}
